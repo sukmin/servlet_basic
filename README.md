@@ -120,6 +120,8 @@ response.sendRedirect(리다이렉트보낼주소);
 	</servlet-mapping>
 ```
 
+- <servlet-mapping>은 필수가 아님. <servlet>만 있다면 사용자 요청을 받지 못하는 서블릿을 만들수도 있음.
+
 - 변수사용(Servlet)
 ```
 public class TestServlet extends HttpServlet {
@@ -222,11 +224,14 @@ public class TestFilter implements Filter {
 요청 -> 필터1 -> 필터2 ->필터3 -> 서블릿실행 -> 필터3 -> 필터2 -> 필터1 -> 응답
 ```
 
-## MVC 아키텍쳐
-
 ## 포워드&인클루드
+- 포워드&인클루드는 작업을 위임하는 것
+- 포워드는 제어권이 돌아오지 않음
+- 인클루드는 제어권이 돌아옴
 
 ## 서블릿컨텍스트
+- 웹 애플리케이션이 생성되어 종료될때까지 유지되는 객체로 모든 서블릿과 공유할 수 있는 객체이다.
+- HttpServletRequest의 setAttriubte(..)와 getAttribute(..)처럼 ServletContext도 setAttriubte(..)와 getAttribute(..)를 이용해 값을 저장하고 이용할 수 있음.
 
 ## 서블릿컨텍스트리스너
 
