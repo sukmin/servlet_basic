@@ -64,9 +64,11 @@ public static void main(String[] args) {
 - 서블릿을 구현하면서 항상 구현하는 뻔한 것들을 미리 어느정도 구현해놓은 것.
 - 개발자는 service(...)메소드만 구현하면 됨.
 
-## 
+## HttpServlet이란?
+- HTTP 메소드에 대응하도록 GenericServlet을 좀 더 추상화 시킨 것
 
 ## web.xml
+
 
 ## 제네릭서블릿
 
