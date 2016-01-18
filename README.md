@@ -86,9 +86,16 @@ public static void main(String[] args) {
 ```
 
 ## 서블릿 생명주기
-
+- init() : 서블릿 컨테이너가 서블릿을 생성한 후 초기화 작업을 수행하기 위해 호출
+- service() : 클라이언트의 요청이 있을때마다 호출
+- destory() : 서블릿 컨테이너가 종료되거나 해당 서블릿을 비활성화 시킬때 호출
 
 ## 리다이렉트
+- 리다이렉트는 사용자의 응답주소를 다른 URL로 돌릴 때 사용한다.
+- HttpServletResponse 의 sendRedirect 메소드
+```
+response.sendRedirect(리다이렉트보낼주소);
+```
 
 ## 서블릿 초기화 매개변수
 
