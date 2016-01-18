@@ -235,6 +235,7 @@ public class TestFilter implements Filter {
 
 ## 리스너
 - 서블릿 컨테이너에 이벤트가 발생하였을 경우에 코드를 실행하고 싶은 경우 리스너를 구현하고 web.xml에 등록하자.
+
 | 분류 | 사건 | 인터페이스 | 
 | --- | --- | --- |
 | 웹애플리케이션 | 시작하거나 종료시 | ServletContextListener |
