@@ -127,8 +127,8 @@ public class TestServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println(this.getInitParameter("dog"));
-		System.out.println(this.getInitParameter("duck"));
+		System.out.println(this.getInitParameter("dog")); // 멍멍
+		System.out.println(this.getInitParameter("duck")); // 꽥꽥
 		
 	}
 
