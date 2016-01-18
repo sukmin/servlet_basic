@@ -100,7 +100,7 @@ response.sendRedirect(리다이렉트보낼주소);
 ## 서블릿 초기화 매개변수
 - 서블릿컨테이너가 init()시 서블릿에 전달하는 데이터
 - 보통 외부요인으로 고정되어 있는 값을 넣을때 사용 (web.xml만 변경하면 되므로 재빌드가 필요없음)
-- 변수설정
+- 변수설정(web.xml)
 ```
 	<servlet>
 		<servlet-name>test</servlet-name>
@@ -120,7 +120,7 @@ response.sendRedirect(리다이렉트보낼주소);
 	</servlet-mapping>
 ```
 
-- 변수사용
+- 변수사용(Servlet)
 ```
 public class TestServlet extends HttpServlet {
 
@@ -136,6 +136,35 @@ public class TestServlet extends HttpServlet {
 ```
 
 ## 컨텍스트 초기화 매개변수
+- 서블릿 초기화 매개변수처럼 변수인데, 서블릿 하나에서만 쓸수있는 것이 아니고 모든 서블릿에서 사용가능한 변수
+- 변수설정(web.xml)
+```
+	<context-param>
+		<param-name>good</param-name>
+		<param-value>아르타니스</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>bad</param-name>
+		<param-value>아몬</param-value>
+	</context-param>
+```
+
+- 변수사용(Servlet)
+```
+public class TestServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		
+		ServletContext sc = this.getServletContext();
+		System.out.println(sc.getInitParameter("good")); // 아르타니스
+		System.out.println(sc.getInitParameter("bad")); // 아몬
+		
+	}
+
+}
+```
 
 ## 필터
 
