@@ -1,6 +1,55 @@
 # servlet_basic
 
 ## HTTP
+- HTTP란? 프로토콜
+- 프로토콜이란? 규약
+- 규약이란? 약속
+- 그럼 HTTP란? 정해진 약속대로 요청을 보내면 정해진 약속대로 응답을 주겠다.
+```
+public static void main(String[] args) {
+
+		String host = "www.naver.com";
+		int port = 80;
+
+		try {
+			Socket socket = new Socket(host, port);
+			OutputStream out = socket.getOutputStream();
+			PrintStream printer = new PrintStream(out);
+
+			StringBuilder builder = new StringBuilder();
+
+			builder.append("GET / HTTP/1.1\r\n");
+			builder.append("Host: www.naver.com\r\n");
+			builder.append("Connection: keep-alive\r\n");
+			builder.append("Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n");
+
+			printer.println(builder.toString());
+
+			printer.flush();
+
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			String line = in.readLine();
+			while (line != null) {
+				System.out.println(line);
+				line = in.readLine();
+			}
+
+			printer.close();
+			in.close();
+			socket.close();
+
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+```
+
+| 메소드 | 역할 |
+| --- | --- |
+| --- | --- || --- | --- |
 
 ## 서블릿이란?
 
