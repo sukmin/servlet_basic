@@ -246,6 +246,13 @@ public class TestFilter implements Filter {
 | 요청 | 요청받고 응답시 | ServletRequestListener |
 | 요청 | ServletRequest에 값을 추가하고,제거하고,대체시 | ServletRequestAttributeListener |
 
+- 구현 후 web.xml에 등록
+```
+	<listener>
+		<listener-class>com.naver.school.TestListener</listener-class>
+	</listener>
+```
+
 ## 추천서적
 | 제목 | 주소 |
 | --- | --- |
