@@ -69,7 +69,21 @@ public static void main(String[] args) {
 - HTTP 메소드에 대응하도록 GenericServlet을 좀 더 추상화 시킨 것
 
 ## web.xml
+- 어떤 서블릿이 있는지 서블릿 컨테이너에게 알려주는 설명서.
+- 서블릿, 리스너, 필터 등을 설정한다.
 
+## 정적자원 디폴트서블릿에서 처리하도록 설정
+- 서블릿 컨테이너는 정적자원을 처리하기 위해 디폴트서블릿을 가지고 있다.
+- web.xml에 설정
+```
+<servlet-mapping>
+	<servlet-name>default</servlet-name>
+	<url-pattern>*.css</url-pattern>
+	<url-pattern>*.html</url-pattern>
+	<url-pattern>*.js</url-pattern>
+	<url-pattern>*.ico</url-pattern>
+</servlet-mapping>
+```
 
 ## 서블릿 생명주기
 
