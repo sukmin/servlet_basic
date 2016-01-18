@@ -98,6 +98,42 @@ response.sendRedirect(리다이렉트보낼주소);
 ```
 
 ## 서블릿 초기화 매개변수
+- 서블릿컨테이너가 init()시 서블릿에 전달하는 데이터
+- 보통 외부요인으로 고정되어 있는 값을 넣을때 사용 (web.xml만 변경하면 되므로 재빌드가 필요없음)
+- 변수설정
+```
+	<servlet>
+		<servlet-name>test</servlet-name>
+		<servlet-class>com.naver.school.TestServlet</servlet-class>
+		<init-param>
+			<param-name>dog</param-name>
+			<param-value>멍멍</param-value>
+		</init-param>
+		<init-param>
+			<param-name>duck</param-name>
+			<param-value>꽥꽥</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>test</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+```
+
+- 변수사용
+```
+public class TestServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println(this.getInitParameter("dog"));
+		System.out.println(this.getInitParameter("duck"));
+		
+	}
+
+}
+```
 
 ## 컨텍스트 초기화 매개변수
 
