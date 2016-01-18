@@ -47,9 +47,8 @@ public static void main(String[] args) {
 	}
 ```
 
-| 메소드 | 역할 |
-| --- | --- |
-| --- | --- || --- | --- |
+- 참고 : https://ko.wikipedia.org/wiki/HTTP
+
 
 ## 서블릿이란?
 
