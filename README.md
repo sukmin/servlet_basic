@@ -125,7 +125,7 @@ response.sendRedirect(리다이렉트보낼주소);
 public class TestServlet extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		System.out.println(this.getInitParameter("dog")); // 멍멍
 		System.out.println(this.getInitParameter("duck")); // 꽥꽥
@@ -155,7 +155,7 @@ public class TestServlet extends HttpServlet {
 public class TestServlet extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		ServletContext sc = this.getServletContext();
 		System.out.println(sc.getInitParameter("good")); // 아르타니스
