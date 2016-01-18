@@ -233,7 +233,12 @@ public class TestFilter implements Filter {
 - 웹 애플리케이션이 생성되어 종료될때까지 유지되는 객체로 모든 서블릿과 공유할 수 있는 객체이다.
 - HttpServletRequest의 setAttriubte(..)와 getAttribute(..)처럼 ServletContext도 setAttriubte(..)와 getAttribute(..)를 이용해 값을 저장하고 이용할 수 있음.
 
-## 서블릿컨텍스트리스너
+## 리스너
+- 서블릿 컨테이너에 이벤트가 발생하였을 경우에 코드를 실행하고 싶은 경우 리스너를 구현하고 web.xml에 등록하자.
+| 분류 | 사건 | 인터페이스 | 
+| --- | --- | --- |
+| 웹애플리케이션 | 시작하거나 종료할때 | ServletContextListener |
+| 웹애플리케이션 | 시작하거나 종료할때 | ServletContextListener |
 
 ## 추천서적
 | 제목 | 주소 |
