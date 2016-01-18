@@ -167,6 +167,56 @@ public class TestServlet extends HttpServlet {
 ```
 
 ## 필터
+- 서블릿의 요청 전, 응답 후 어떤 작업을 할 수 있는 것이 필터
+- filterChain.doFilter() 호출을 기준으로 호출전에 작업하면 서블릿을 타기 전, 호출후에 작업하면 서블릿을 탄 후 해당 코드가 실행.
+- 코드
+```
+public class TestFilter implements Filter {
+	
+	private FilterConfig config;
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// 서블릿의 init과 같은 역할
+		// 필터 초기화 매개변수를 사용한다면 filterConfig를 저장하여 사용
+		this.config = filterConfig;
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
+			throws IOException, ServletException {
+		
+		// 들어올때 한번, 나갈때 한번 총 2번 호출된다.
+		
+		System.out.println("들어올때 " + config.getInitParameter("pig"));	// 서블릿 타기 전에 실행할 코드 작성
+		filterChain.doFilter(request, response); // 다음번 필터 호출
+		System.out.println("나갈때 " + config.getInitParameter("pig")); // 서블릿 탄 후 실행할 코드 작성
+		
+	}
+
+	@Override
+	public void destroy() {
+		// 서블릿의 destroy과 같은 역할
+	}
+
+}
+```
+
+- 설정(web.xml)
+```
+	<filter>
+		<filter-name>testFilter</filter-name>
+		<filter-class>com.naver.school.TestFilter</filter-class>
+		<init-param>
+			<param-name>pig</param-name>
+			<param-value>꿀꿀</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>testFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+```
 
 ## MVC 아키텍쳐
 
