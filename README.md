@@ -237,8 +237,13 @@ public class TestFilter implements Filter {
 - 서블릿 컨테이너에 이벤트가 발생하였을 경우에 코드를 실행하고 싶은 경우 리스너를 구현하고 web.xml에 등록하자.
 | 분류 | 사건 | 인터페이스 | 
 | --- | --- | --- |
-| 웹애플리케이션 | 시작하거나 종료할때 | ServletContextListener |
-| 웹애플리케이션 | 시작하거나 종료할때 | ServletContextListener |
+| 웹애플리케이션 | 시작하거나 종료시 | ServletContextListener |
+| 웹애플리케이션 | ServletContext에 값을 추가하고 제거하고 대체시 | ServletContextAttributeListener |
+| 세션 | 생성,소멸시 | HttpSessionListener |
+| 세션 | 활성,비활성시 | HttpSessionActivationListener |
+| 세션 | HttpSession에 값을 추가하고, 제거하고 대체시 | HttpSessionAttributeListener |
+| 요청 | 요청받고 응답시 | ServletRequestListener |
+| 요청 | ServletRequest에 값을 추가하고,제거하고,대체시 | ServletRequestAttributeListener |
 
 ## 추천서적
 | 제목 | 주소 |
