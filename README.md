@@ -217,6 +217,10 @@ public class TestFilter implements Filter {
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 ```
+- 필터는 순서에 의존적임. 예를 들어 web.xml에 필터1, 필터2, 필터3 순으로 등록했다고 하면 아래와 같이 동작
+```
+요청 -> 필터1 -> 필터2 ->필터3 -> 서블릿실행 -> 필터3 -> 필터2 -> 필터1
+```
 
 ## MVC 아키텍쳐
 
