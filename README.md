@@ -70,11 +70,8 @@ public static void main(String[] args) {
 ## web.xml
 
 
-## 제네릭서블릿
-
 ## 서블릿 생명주기
 
-## HTTP 서블릿
 
 ## 리다이렉트
 
