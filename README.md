@@ -51,7 +51,7 @@ public static void main(String[] args) {
 
 
 ## 서블릿이란?
-- 1997년 Sun사에서 제안한, 웹서비스를 위한 기본인터페이스.
+- 1997년 Sun사에서 제안한, 자바 웹서비스를 위한 기본인터페이스.
 - javax.servlet.Servlet 인터페이스를 구현한 것이 서블릿.
 - 일반적인 자바 프로그램은 public static void main(String [] args){...} 메소드로 실행되지만, 서블릿은 서블릿 컨테이너에 등록된 다음 서블릿 컨테이너에 의해 생성, 호출, 소멸됨.
 
