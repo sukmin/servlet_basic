@@ -4,7 +4,7 @@
 - HTTP란?    프로토콜
 - 프로토콜이란?    규약
 - 규약이란?    약속
-- 그럼 HTTP란?    사전에 협의한대로 요청을 보내면, 사전에 협의한대로 응답을 주겠다는 약속
+- 다시 HTTP란?    사전에 협의한대로 요청을 보내면, 사전에 협의한대로 응답을 주겠다는 약속
 ```
 public static void main(String[] args) {
 
@@ -187,9 +187,6 @@ public class TestFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
 			throws IOException, ServletException {
-		
-		// 들어올때 한번, 나갈때 한번 총 2번 호출된다.
-		
 		System.out.println("들어올때 " + config.getInitParameter("pig"));	// 서블릿 타기 전에 실행할 코드 작성
 		filterChain.doFilter(request, response); // 다음번 필터 호출
 		System.out.println("나갈때 " + config.getInitParameter("pig")); // 서블릿 탄 후 실행할 코드 작성
