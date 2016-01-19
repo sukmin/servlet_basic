@@ -120,8 +120,6 @@ response.sendRedirect(리다이렉트보낼주소);
 	</servlet-mapping>
 ```
 
-- <servlet-mapping>은 필수가 아님. <servlet>만 있다면 사용자 요청을 받지 못하는 서블릿을 만들수도 있음.
-
 - 변수사용(Servlet)
 ```
 public class TestServlet extends HttpServlet {
